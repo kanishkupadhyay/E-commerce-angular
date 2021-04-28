@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DesignService {
-  BASEURL="http://localhost:3000/products";
-  cartItemUrl="http://localhost:3000/cartItem";
+  BASEURL="https://e-commerce-angular-database.herokuapp.com/products";
+  cartItemUrl="https://e-commerce-angular-database.herokuapp.com/cartItem";
   totalItem=new BehaviorSubject(0)
   constructor(private http:HttpClient) { }
   getAllData(){
@@ -29,19 +29,19 @@ return this.http.delete(`${this.cartItemUrl}/${id}`)
     return this.http.get(`${this.BASEURL}/${id}`)
   }
   createComments(id:any){
-    return this.http.get(`http://localhost:3000/products/${id}`)
+    return this.http.get(`https://e-commerce-angular-database.herokuapp.com/products/${id}`)
   }
   category(){
-return this.http.get('http://localhost:3000/category')
+return this.http.get('https://e-commerce-angular-database.herokuapp.com/category')
   }
   categoryItem(categoryId:any){
-    return this.http.get(`http://localhost:3000/products?categoryId=${categoryId}`)
+    return this.http.get(`https://e-commerce-angular-database.herokuapp.com//products?categoryId=${categoryId}`)
   }
 quantity(id:number){
- return this.http.get(`http://localhost:3000/products/${id}`)
+ return this.http.get(`https://e-commerce-angular-database.herokuapp.com//products/${id}`)
 
 }
 pp(id:any){
-return this.http.get(`http://localhost:3000/cartItem/${id}`)
+return this.http.get(`https://e-commerce-angular-database.herokuapp.com//cartItem/${id}`)
 }
 }
