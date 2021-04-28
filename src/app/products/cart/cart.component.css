@@ -1,0 +1,170 @@
+.mains{
+    padding-top: 103px;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+td img{
+width: 100px;
+border-radius: 100px;
+}
+td mat-icon{
+   color: red; 
+   cursor: pointer;
+}
+.nothing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.total{
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin: 5px 0px;
+    width: 100%;
+}
+.plus-minus{
+    position: relative;
+    top: 5px;
+    color: navy !important;  
+}
+.checkout{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.form-div{
+    background: #eaeaea38;
+    width: 700px;
+    box-shadow: 0px 0px 13px #00000024;
+    height: 430px;
+   
+}
+.gst-div{
+    display: flex;
+    justify-content: space-around;
+}
+.total h1{
+    font-size: 1.6rem;
+}
+.print{
+    display: flex;
+    justify-content: center;
+}
+.print button{
+    margin: 10px 0px;
+}
+.calculate{
+    display: flex;
+    justify-content: space-around;
+}
+.emoji{
+    font-size: 34px;
+    margin-top: 14px;
+}
+.cc{
+    display: flex;
+    justify-content: center;
+}
+.dialog{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 151px;
+}
+.mat-form-field{
+    width: 40%;
+}
+.spinner{
+    display: flex;
+    justify-content: center;
+   padding-top: 109px;
+}
+.nothing{
+    padding-top: 190px;
+}
+.shop-btn{
+    display: flex;
+justify-content: center;
+margin: 10px 0px;
+}
+.order-div{
+    border-radius: 8px;
+    box-shadow: 0px 0px 13px #00000030;
+    background: #efefef8f; 
+    width: 50%;
+}
+.order-div h1{
+    text-align: center;
+}
+.user{
+    margin-left: 50px;
+}
+.kk{
+    display: flex;
+    justify-content: center;
+    padding-top: 145px;
+}
+.detail{
+    display: flex;
+    justify-content: space-around;
+}
+.last{
+    display: flex;
+    justify-content: center;
+}
+h4{
+    font-size: 18px;
+}
+@media(max-width:808px){
+    .order-div{
+        width: 70%;
+    }
+    .form-div{
+        width: 500px;
+    }
+    .mat-form-field{
+        width: 74%;
+    }
+}
+@media(max-width:522px){
+    .order-div{
+        width: 90%;
+    }
+    .form-div{
+        width: 350px;
+    }
+    .mat-form-field{
+        width: 70%;
+    }
+    td img{
+        width: 69px;
+    }
+}
+@media(max-width:488px){
+td {
+    font-size: 12px;
+}
+}
+@media(max-width:448px){
+   td img{
+       width: 50px;
+   }
+    }
+    @media(max-width:384px){
+       th{
+           font-size: 14px;
+       }
+       .plus-minus{
+           top: 9px;
+       }
+         }

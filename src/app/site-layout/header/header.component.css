@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+p{
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+.link-div{
+    margin-right: 35px;
+}
+
+.link-div a{
+    margin: 0px 19px;
+    color: #fff;
+    font-size: 23px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
+
+.link-div  a:hover{
+    color: rgb(233, 87, 111);
+}
+.menu-link a{
+    margin: 0px 19px;
+    color: #fff;
+    font-size: 23px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
+.menu-link a:hover{
+    color: rgb(233,87,111);
+}
+.mat-toolbar {
+    background-color: #06005a;
+    justify-content: space-between;
+}
+.mat-toolbar span{
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+}
+.kanishk{
+    color: rgb(233, 87, 111) !important;
+}
+.menu-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+::ng-deep .mat-menu-content {
+    background-color: #06005a !important;
+}
+.menu-link a{
+    color: #fff;
+}
+.icon{
+    color: #fff;
+    font-size: 25px;
+    display: none;
+    cursor: pointer;
+}
+@media(max-width:752px){
+    .link-div a{
+        display: none;
+    }
+    .icon{
+        display: block;
+    }
+    .link-div{
+        margin-right: 18px;
+    }
+}

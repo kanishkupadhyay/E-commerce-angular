@@ -1,0 +1,139 @@
+<div class="main-div">
+
+  <div class="spinner" *ngIf="spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+<div  [style.display]="cartItems?'none':'block'">
+    <div *ngIf="nothing;else elseblock" class="nothing">
+        <h1 >Nothing Added in Cart</h1>
+        <div class="shop-btn">
+         <a routerLink="/all-product"> <button mat-flat-button color="warn">Shop Now</button></a>
+        </div>
+    </div>
+    <ng-template #elseblock >
+        <div class="mains" >
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let k of items">
+          <tr >
+            <td><img src="{{k.proImg}}" alt="Erro loading image" srcset=""></td>
+            <td>{{k.productName}}</td>
+            <td #price>{{k.price |currency:'INR'}}</td>
+            <td><mat-icon class="plus-minus" (click)="decreaseQuantity(k.id ,$event,q,price)">remove_circle</mat-icon> <span #q>{{quantity}}</span><mat-icon (click)="increaseQuantity(k.id ,$event,q,price)" class="plus-minus">add_circle</mat-icon></td>
+            <td><mat-icon (click)="deleteItem(k.id);openSnackBar(message.value, action.value)">delete</mat-icon></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total">
+        <h1>Total:{{totalPriceBefore|currency:'INR'}}</h1>
+    </div>
+    <div class="checkout">
+        <button mat-button (click)="openDialog()" mat-flat-button color="primary">Check out</button>
+    </div>
+    
+    </div>
+    </ng-template>
+    
+    </div>
+    
+    <div [style.display]="dialog?'block':'none'">
+    <div class="dialog" >
+    <div class="form-div">
+        <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>First Name</mat-label>
+              <input required minlength="3" maxlength="15" name="fname" ngModel matInput placeholder="First Name">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>Last Name</mat-label>
+              <input required minlength="3" maxlength="15" name="lname" ngModel matInput placeholder="Last Name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Mobile No</mat-label>
+                <input required minlength="10" type="number" maxlength="10" name="mobile" ngModel matInput placeholder="Mobile Number">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" required  name="email" ngModel matInput placeholder="Email Id">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Address</mat-label>
+                <textarea required minlength="10" cols="4" name="address" ngModel matInput placeholder="Address"></textarea>
+              </mat-form-field>
+              <div>
+                <button [disabled]="myForm.invalid" mat-button  mat-flat-button color="warn">Place Order</button>
+              </div>
+          </form>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="display: none;">
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <input matInput value="Product deleted successfully" #message>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Action</mat-label>
+      <input matInput value="success" #action>
+    </mat-form-field>
+  </div>
+
+
+
+  <div [style.display]="summary?'block':'none'">
+    <div class="kk">
+    <div class="order-div">
+      <div class="cc">
+        
+      <h1>Order summary</h1> <div><mat-icon class="emoji">tag_faces</mat-icon></div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="user">
+        <h4>Name:{{fname}} {{lname}}</h4>
+        <h4>Mobile:{{mobile}}</h4>
+        <h4>Email:{{email}} </h4>
+        <h4>Address: {{address}}</h4>
+      </div>
+     
+<mat-divider></mat-divider>
+<div *ngFor="let k of items" class="detail">
+  <div>
+    <h5>{{k.productName}}</h5>
+  </div>
+  <div>
+    <h6>{{k.price|currency:'INR'}}</h6>
+  </div>
+</div>
+<mat-divider></mat-divider>
+<div class="calculate">
+  <h6 class="items">Total items ={{items.length}}</h6>
+  <h6 class="items">Price = {{totalPriceBefore |currency:'INR'}}</h6>
+</div>
+<mat-divider></mat-divider>
+<div class="gst-div">
+  <h5>GST:{{oldValue>1000?'18%':'0%'}}</h5>
+  <h5>Discount:10%</h5>
+</div>
+<mat-divider></mat-divider>
+<div class="last">
+  <h3>Total Amount: {{gst |currency:'INR'}}</h3>
+</div>
+<div class="print">
+  <button (click)="printFunc()" mat-flat-button color="primary">Print</button>
+</div>
+    </div>
+  </div>
+</div>

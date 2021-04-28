@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+    position:relative; 
+    min-height: 100%;
+  }
+  /*Normalize html and body elements,this style is just good to have*/
+  html,body{
+    margin:0;
+    padding:0;
+  }
+  
+  .footer{
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height:50px;
+ background: #06005a
+  }
+.active{
+  color: rgb(233 87 111) !important;background:#06005a
+}
+
+
