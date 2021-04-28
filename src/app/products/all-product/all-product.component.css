@@ -57,6 +57,11 @@ opacity: 0.2;
  .pro-img{
      height: 500px;
  }
- @media(max-width:844px){
-    
+ @media(max-width:536px){
+  .cat-div{
+    flex-direction: column;
+  }
+  .cat-div mat-button-toggle-group{
+    margin-top: 10px;
+  }
  }

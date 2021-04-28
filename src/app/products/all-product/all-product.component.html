@@ -1,99 +1,70 @@
-<!-- <div class="cat-div">
- 
-<mat-button-toggle-group *ngFor="let k of category" class="category">
-  <a routerLink="/view-item-category/{{k.categoryId}}"><mat-button-toggle >{{k.product}}</mat-button-toggle></a>
-  
-</mat-button-toggle-group>
-
+<div class="cat-div">
+  <mat-button-toggle-group *ngFor="let k of category" class="category">
+    <a routerLink="/view-item-category/{{ k.categoryId }}"
+      ><mat-button-toggle class="kkk">{{ k.product }}</mat-button-toggle></a
+    >
+  </mat-button-toggle-group>
 </div>
-<mat-grid-list cols="2" rowHeight="420px">
-  <div class="spinner" *ngIf="spinner">
-    <mat-spinner></mat-spinner>
-  </div>
-  
-    <mat-grid-tile rowspan="2" class="main" *ngFor="let item of products">
-        <div>
-         
-        <mat-card class="example-card" >
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>{{item.productName}}</mat-card-title>
-              <mat-card-subtitle>Rating:{{item.rating}}</mat-card-subtitle>
-            </mat-card-header>
-            <a routerLink="/view-item/{{item.id}}">
-            <img (mouseenter)="imgMouseEnter()" (mouseleave)="imgMouseLeave()" class="pro-img" mat-card-image src="{{item.proImg}}" alt="Photo of a Shiba Inu">
-            <span class="view" *ngIf="viewTxt">{{item.productName}}</span>
+
+<div
+  class="main container"
+  style="display: flex; justify-content: center; margin-top: 40px"
+>
+  <div class="col-lg-9">
+    <div class="row">
+      <div
+        class="col-lg-6 col-md-6 mb-4"
+        style="display: flex; justify-content: center"
+        *ngFor="let item of products"
+      >
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ item.productName }}</mat-card-title>
+            <mat-card-subtitle>Rating:{{ item.rating }}</mat-card-subtitle>
+          </mat-card-header>
+          <a routerLink="/view-item/{{ item.id }}">
+            <img
+              (mouseenter)="imgMouseEnter()"
+              (mouseleave)="imgMouseLeave()"
+              class="pro-img"
+              mat-card-image
+              src="{{ item.proImg }}"
+              alt="Photo of a Shiba Inu"
+            />
+            <span class="view" *ngIf="viewTxt">{{ item.productName }}</span>
           </a>
-            <mat-card-content>
-              <p>
-               {{item.description}}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>{{item.price |currency:'INR'}}</button>
-              <button mat-button (click)="addItem(item.id,$event);openSnackBar(message.value, action.value)"><mat-icon> add_comment</mat-icon>Add Item</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-    </mat-grid-tile>
-  </mat-grid-list>-->
-
-
-
-
-
-
-
-
-
-
- <div class="cat-div">
- 
-<mat-button-toggle-group *ngFor="let k of category" class="category">
-  <a routerLink="/view-item-category/{{k.categoryId}}"><mat-button-toggle >{{k.product}}</mat-button-toggle></a>
-  
-</mat-button-toggle-group>
-
+          <mat-card-content>
+            <p>
+              {{ item.description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>{{ item.price | currency: "INR" }}</button>
+            <button
+              mat-button
+              (click)="
+                addItem(item.id, $event);
+                openSnackBar(message.value, action.value)
+              "
+            >
+              <mat-icon> add_comment</mat-icon>Add Item
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="main container" style="display: flex; justify-content: center;margin-top: 40px;">
-    <div class="col-lg-9 ">
-        <div class="row">
-
-            <div class="col-lg-6 col-md-6 mb-4 " style="display: flex; justify-content: center;"*ngFor="let item of products" >
-              <mat-card class="example-card" >
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>{{item.productName}}</mat-card-title>
-                  <mat-card-subtitle>Rating:{{item.rating}}</mat-card-subtitle>
-                </mat-card-header>
-                <a routerLink="/view-item/{{item.id}}">
-                <img (mouseenter)="imgMouseEnter()" (mouseleave)="imgMouseLeave()" class="pro-img" mat-card-image src="{{item.proImg}}" alt="Photo of a Shiba Inu">
-                <span class="view" *ngIf="viewTxt">{{item.productName}}</span>
-              </a>
-                <mat-card-content>
-                  <p>
-                   {{item.description}}
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>{{item.price |currency:'INR'}}</button>
-                  <button mat-button (click)="addItem(item.id,$event);openSnackBar(message.value, action.value)"><mat-icon> add_comment</mat-icon>Add Item</button>
-                </mat-card-actions>
-              </mat-card>
-                  </div>
-                </div>
-            </div>
-</div>
-      
-<div style="display: none;">
+<div style="display: none">
   <mat-form-field>
     <mat-label>Message</mat-label>
-    <input matInput value="Product has been added to cart" #message>
+    <input matInput value="Product has been added to cart" #message />
   </mat-form-field>
-  
+
   <mat-form-field>
     <mat-label>Action</mat-label>
-    <input matInput value="Go to cart" #action>
+    <input matInput value="Go to cart" #action />
   </mat-form-field>
-</div> -->
+</div>
