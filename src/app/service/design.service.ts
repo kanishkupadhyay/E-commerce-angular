@@ -35,7 +35,7 @@ return this.http.delete(`${this.cartItemUrl}/${id}`)
 return this.http.get('https://e-commerce-angular-database.herokuapp.com/category')
   }
   categoryItem(categoryId:any){
-    return this.http.get(`https://e-commerce-angular-database.herokuapp.com//products?categoryId=${categoryId}`)
+    return this.http.get(`https://e-commerce-angular-database.herokuapp.com/products?categoryId=${categoryId}`)
   }
 quantity(id:number){
  return this.http.get(`https://e-commerce-angular-database.herokuapp.com//products/${id}`)
