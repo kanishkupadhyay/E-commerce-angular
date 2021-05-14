@@ -11,11 +11,18 @@ import {SiteLayoutModule}from './site-layout/site-layout.module';
 import {ProductsModule}from './products/products.module'
 import {RouterModule}from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+// Firebase Module
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -25,7 +32,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     SiteLayoutModule,
     ProductsModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

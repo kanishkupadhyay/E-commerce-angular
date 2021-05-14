@@ -1,7 +1,13 @@
 <p>
   <mat-toolbar>
     <span class="kanishk">KanishkUpadhyay</span>
+    <div class="auth-links">
+   
+    </div>
     <div class="link-div">
+      <a class="username" *ngIf="username">Welcome {{username.displayName}} <img class="hero" src="{{username.photoURL}}" alt="Error loading image" srcset=""> </a>
+      <a (click)="login()" *ngIf="!username">Login</a>
+      <a (click)="logout()" *ngIf="username">Logout</a>
       <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
       <a  routerLinkActive="active" routerLink="all-product">Products</a>
       <a  routerLinkActive="active" routerLink="cart"><span>{{value}}</span><mat-icon>shopping_cart</mat-icon></a>
@@ -11,6 +17,9 @@
           <a  [routerLinkActiveOptions]="{exact:true}"  routerLinkActive="active" routerLink="/">Home</a>
           <a  routerLinkActive="active" routerLink="all-product">Products</a>
           <a  routerLinkActive="active" routerLink="cart"><span>{{value}}</span><mat-icon>shopping_cart</mat-icon></a>
+          <a class="username" *ngIf="username">Welcome {{username.displayName}} <img class="hero" src="{{username.photoURL}}" alt="Error loading image" srcset=""> </a>
+          <a (click)="login()" *ngIf="!username">Login</a>
+          <a (click)="logout()" *ngIf="username">Logout</a>
         </div>
       </mat-menu>
     </div>

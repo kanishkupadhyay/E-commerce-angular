@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthService } from '../../service/auth.service';
 import { DesignService } from '../../service/design.service';
 
 @Component({
@@ -6,15 +8,24 @@ import { DesignService } from '../../service/design.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
 value:number=0
-  constructor(private design:DesignService) { 
+username:any=''
+  constructor(private design:DesignService,private authService:AuthService,private afAuth:AngularFireAuth) { 
     this.design.totalItem.subscribe(val=>{
       this.value=val
     })
+    this.afAuth.authState.subscribe(data=>{
+      this.username=data
+    })
   }
 
-  ngOnInit(): void {
+  login(){
+this.authService.login()
+
+  }
+  logout(){
+this.authService.logout()
   }
 
 }

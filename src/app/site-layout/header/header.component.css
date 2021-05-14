@@ -5,10 +5,26 @@ p{
     width: 100%;
     z-index: 4;
 }
-.link-div{
-    margin-right: 35px;
-}
 
+.auth-links a{
+color: #fff;
+margin: 0px 10px;
+font-family: 'Josefin Sans', sans-serif;
+text-decoration: none;
+cursor: pointer;
+font-size: 23px;
+}
+.username{
+    color: yellow !important;
+}
+.auth-links{
+    width: 900px;
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-links a:hover{
+    color: rgb(233, 87, 111);
+}
 .link-div a{
     margin: 0px 19px;
     color: #fff;
@@ -16,7 +32,10 @@ p{
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
 }
-
+.hero{
+    width: 56px;
+    border-radius: 57px;
+}
 .link-div  a:hover{
     color: rgb(233, 87, 111);
 }
@@ -59,12 +78,15 @@ p{
     display: none;
     cursor: pointer;
 }
-@media(max-width:752px){
+@media(max-width:1225px){
     .link-div a{
         display: none;
     }
     .icon{
         display: block;
+    }
+    .menu-link a{
+        font-size: 13px;
     }
     .link-div{
         margin-right: 18px;

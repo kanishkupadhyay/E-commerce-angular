@@ -4,13 +4,15 @@ import { HeaderComponent } from './header/header.component';
 import {MaterialModule}from '../material/material.module';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component'
-import {RouterModule}from '@angular/router'
+import {RouterModule}from '@angular/router';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import {RouterModule}from '@angular/router'
   exports:[
     HeaderComponent,
     HomeComponent,
-  FooterComponent
+  FooterComponent,
+  LoginComponent
   ]
 })
 export class SiteLayoutModule { }
